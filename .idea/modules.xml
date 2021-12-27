@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/javabenchmark.iml" filepath="$PROJECT_DIR$/javabenchmark.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reactivediscruptor.iml" filepath="$PROJECT_DIR$/reactivediscruptor.iml" />
     </modules>
   </component>
 </project>

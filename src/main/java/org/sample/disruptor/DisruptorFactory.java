@@ -17,11 +17,6 @@ public class DisruptorFactory {
         return disruptor;
     }
 
-    public static void onEvent(String longEvent, long l, boolean b) throws Exception {
-        //TODO
-    }
-
-
     public static class LongEventFactory implements EventFactory<IEvent> {
         @Override
         public IEvent newInstance() {

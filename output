@@ -1,0 +1,243 @@
+# JMH version: 1.33
+# VM version: JDK 16.0.2, OpenJDK 64-Bit Server VM, 16.0.2+7-67
+# VM invoker: /Users/flokilab/Library/Java/JavaVirtualMachines/openjdk-16.0.2/Contents/Home/bin/java
+# VM options: <none>
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.sample.StreamDisruptorBenchmark.testDisruptorMethod
+# Parameters: (loop = 10000)
+
+# Run progress: 0.00% complete, ETA 00:20:00
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 24.303 ms/op
+# Warmup Iteration   2: 21.187 ms/op
+# Warmup Iteration   3: 28.568 ms/op
+# Warmup Iteration   4: 21.257 ms/op
+# Warmup Iteration   5: 20.079 ms/op
+Iteration   1: 20.217 ms/op
+Iteration   2: 20.742 ms/op
+Iteration   3: 20.126 ms/op
+Iteration   4: 20.043 ms/op
+Iteration   5: 20.247 ms/op
+
+# Run progress: 8.33% complete, ETA 00:18:26
+# Fork: 1 of 1
+# Warmup Iteration   1: 24.862 ms/op
+# Warmup Iteration   2: 29.736 ms/op
+# Warmup Iteration   3: 19.904 ms/op
+# Warmup Iteration   4: 19.570 ms/op
+# Warmup Iteration   5: 19.563 ms/op
+Iteration   1: 19.494 ms/op
+Iteration   2: 19.695 ms/op
+Iteration   3: 19.334 ms/op
+Iteration   4: 19.515 ms/op
+Iteration   5: 19.404 ms/op
+
+
+Result "org.sample.StreamDisruptorBenchmark.testDisruptorMethod":
+  19.488 ±(99.9%) 0.525 ms/op [Average]
+  (min, avg, max) = (19.334, 19.488, 19.695), stdev = 0.136
+  CI (99.9%): [18.963, 20.014] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 16.0.2, OpenJDK 64-Bit Server VM, 16.0.2+7-67
+# VM invoker: /Users/flokilab/Library/Java/JavaVirtualMachines/openjdk-16.0.2/Contents/Home/bin/java
+# VM options: <none>
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.sample.StreamDisruptorBenchmark.testDisruptorMethod
+# Parameters: (loop = 100000)
+
+# Run progress: 16.67% complete, ETA 00:16:46
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 218.800 ms/op
+# Warmup Iteration   2: 196.866 ms/op
+# Warmup Iteration   3: 194.218 ms/op
+# Warmup Iteration   4: 198.485 ms/op
+# Warmup Iteration   5: 193.462 ms/op
+Iteration   1: 205.477 ms/op
+Iteration   2: 195.984 ms/op
+Iteration   3: 193.718 ms/op
+Iteration   4: 191.087 ms/op
+Iteration   5: 191.922 ms/op
+
+# Run progress: 25.00% complete, ETA 00:15:08
+# Fork: 1 of 1
+# Warmup Iteration   1: 232.295 ms/op
+# Warmup Iteration   2: 197.241 ms/op
+# Warmup Iteration   3: 194.547 ms/op
+# Warmup Iteration   4: 196.599 ms/op
+# Warmup Iteration   5: 196.931 ms/op
+Iteration   1: 195.432 ms/op
+Iteration   2: 197.167 ms/op
+Iteration   3: 196.315 ms/op
+Iteration   4: 196.025 ms/op
+Iteration   5: 196.208 ms/op
+
+
+Result "org.sample.StreamDisruptorBenchmark.testDisruptorMethod":
+  196.230 ±(99.9%) 2.408 ms/op [Average]
+  (min, avg, max) = (195.432, 196.230, 197.167), stdev = 0.625
+  CI (99.9%): [193.822, 198.638] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 16.0.2, OpenJDK 64-Bit Server VM, 16.0.2+7-67
+# VM invoker: /Users/flokilab/Library/Java/JavaVirtualMachines/openjdk-16.0.2/Contents/Home/bin/java
+# VM options: <none>
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.sample.StreamDisruptorBenchmark.testDisruptorMethod
+# Parameters: (loop = 1000000)
+
+# Run progress: 33.33% complete, ETA 00:13:27
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 2521.244 ms/op
+# Warmup Iteration   2: 2144.858 ms/op
+# Warmup Iteration   3: 2158.881 ms/op
+# Warmup Iteration   4: 2389.160 ms/op
+# Warmup Iteration   5: 2154.820 ms/op
+Iteration   1: 2124.530 ms/op
+Iteration   2: 2141.583 ms/op
+Iteration   3: 2127.918 ms/op
+Iteration   4: 2117.084 ms/op
+Iteration   5: 2133.520 ms/op
+
+# Run progress: 41.67% complete, ETA 00:11:56
+# Fork: 1 of 1
+# Warmup Iteration   1: 2525.682 ms/op
+# Warmup Iteration   2: 2063.861 ms/op
+# Warmup Iteration   3: 2045.044 ms/op
+# Warmup Iteration   4: 2074.456 ms/op
+# Warmup Iteration   5: 2063.887 ms/op
+Iteration   1: 1986.888 ms/op
+Iteration   2: 1970.307 ms/op
+Iteration   3: 2001.817 ms/op
+Iteration   4: 2005.157 ms/op
+Iteration   5: 2116.170 ms/op
+
+
+Result "org.sample.StreamDisruptorBenchmark.testDisruptorMethod":
+  2016.068 ±(99.9%) 221.939 ms/op [Average]
+  (min, avg, max) = (1970.307, 2016.068, 2116.170), stdev = 57.637
+  CI (99.9%): [1794.128, 2238.007] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 16.0.2, OpenJDK 64-Bit Server VM, 16.0.2+7-67
+# VM invoker: /Users/flokilab/Library/Java/JavaVirtualMachines/openjdk-16.0.2/Contents/Home/bin/java
+# VM options: <none>
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.sample.StreamDisruptorBenchmark.testReactiveMethod
+# Parameters: (loop = 10000)
+
+# Run progress: 50.00% complete, ETA 00:10:18
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 15.990 ms/op
+# Warmup Iteration   2: 12.605 ms/op
+# Warmup Iteration   3: 11.368 ms/op
+# Warmup Iteration   4: 11.721 ms/op
+# Warmup Iteration   5: 11.619 ms/op
+Iteration   1: 11.578 ms/op
+Iteration   2: 10.941 ms/op
+Iteration   3: 11.503 ms/op
+Iteration   4: 11.047 ms/op
+Iteration   5: 11.144 ms/op
+
+# Run progress: 58.33% complete, ETA 00:08:34
+# Fork: 1 of 1
+# Warmup Iteration   1: 9.473 ms/op
+# Warmup Iteration   2: 11.684 ms/op
+# Warmup Iteration   3: 12.170 ms/op
+# Warmup Iteration   4: 11.178 ms/op
+# Warmup Iteration   5: 13.679 ms/op
+Iteration   1: 12.407 ms/op
+Iteration   2: 19.392 ms/op
+Iteration   3: 17.593 ms/op
+Iteration   4: 17.369 ms/op
+Iteration   5: 21.799 ms/op
+
+
+Result "org.sample.StreamDisruptorBenchmark.testReactiveMethod":
+  17.712 ±(99.9%) 13.311 ms/op [Average]
+  (min, avg, max) = (12.407, 17.712, 21.799), stdev = 3.457
+  CI (99.9%): [4.401, 31.023] (assumes normal distribution)
+
+
+# JMH version: 1.33
+# VM version: JDK 16.0.2, OpenJDK 64-Bit Server VM, 16.0.2+7-67
+# VM invoker: /Users/flokilab/Library/Java/JavaVirtualMachines/openjdk-16.0.2/Contents/Home/bin/java
+# VM options: <none>
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.sample.StreamDisruptorBenchmark.testReactiveMethod
+# Parameters: (loop = 100000)
+
+# Run progress: 66.67% complete, ETA 00:06:53
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: 9.732 ms/op
+# Warmup Iteration   2: 87.968 ms/op
+# Warmup Iteration   3: 466.470 ms/op
+# Warmup Iteration   4: 808.048 ms/op
+# Warmup Iteration   5: <forked VM failed with exit code 137>
+<stdout last='20 lines'>
+</stdout>
+<stderr last='20 lines'>
+</stderr>
+
+# JMH version: 1.33
+# VM version: JDK 16.0.2, OpenJDK 64-Bit Server VM, 16.0.2+7-67
+# VM invoker: /Users/flokilab/Library/Java/JavaVirtualMachines/openjdk-16.0.2/Contents/Home/bin/java
+# VM options: <none>
+# Blackhole mode: full + dont-inline hint (default, use -Djmh.blackhole.autoDetect=true to auto-detect)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.sample.StreamDisruptorBenchmark.testReactiveMethod
+# Parameters: (loop = 1000000)
+
+# Run progress: 66.67% complete, ETA 00:06:53
+# Warmup Fork: 1 of 1
+# Warmup Iteration   1: <forked VM failed with exit code 137>
+<stdout last='20 lines'>
+</stdout>
+<stderr last='20 lines'>
+</stderr>
+
+# Run complete. Total time: 00:13:47
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+Benchmark                                      (loop)  Mode  Cnt     Score     Error  Units
+StreamDisruptorBenchmark.testDisruptorMethod    10000  avgt    5    19.488 ±   0.525  ms/op
+StreamDisruptorBenchmark.testDisruptorMethod   100000  avgt    5   196.230 ±   2.408  ms/op
+StreamDisruptorBenchmark.testDisruptorMethod  1000000  avgt    5  2016.068 ± 221.939  ms/op
+StreamDisruptorBenchmark.testReactiveMethod     10000  avgt    5    17.712 ±  13.311  ms/op
