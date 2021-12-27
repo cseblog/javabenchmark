@@ -4,6 +4,6 @@ mvn clean package
 
 Run
 
-java -jar benchmark.jar
+java -jar target/benchmark.jar
 
 
