@@ -1,14 +1,15 @@
-package org.sample.model;
+package org.sample.disruptor;
 
 import com.lmax.disruptor.RingBuffer;
 import lombok.SneakyThrows;
+import org.sample.model.IEvent;
 
-public class ProducerThread extends Thread {
+public class ThreadProducer extends Thread {
     int loop;
     RingBuffer<IEvent> ringBuffer;
     String name;
 
-    public ProducerThread(String name, RingBuffer<IEvent> ringBuffer, int loop) {
+    public ThreadProducer(String name, RingBuffer<IEvent> ringBuffer, int loop) {
         this.ringBuffer = ringBuffer;
         this.name = name;
         this.loop = loop;

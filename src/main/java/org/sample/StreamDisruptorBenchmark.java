@@ -6,8 +6,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import org.sample.disruptor.DisruptorFactory;
+import org.sample.disruptor.ThreadProducer;
 import org.sample.model.IEvent;
-import org.sample.model.ProducerThread;
 import org.sample.rx.ObservableFactory;
 
 import java.util.ArrayList;
@@ -21,47 +21,52 @@ public class StreamDisruptorBenchmark {
 
     @Benchmark
     public void testReactiveMethod(Blackhole blackhole, BenchmarkState state) throws InterruptedException {
-        // Producer P1
+        ObservableFactory.isBothComplete = 0;
         Observable<IEvent> ob1 = ObservableFactory
-                .getPriceObservable("Ob1", state.numberMsgTotal);
-
+                .getPriceObservable("T1", state.numberMsgTotal);
         // Producer P2
         Observable<IEvent> ob2 = ObservableFactory
-                .getDealObservable("Ob2", state.numberMsgTotal);
+                .getDealObservable("T2", state.numberMsgTotal);
 
         // Consumer C1
-        ob1.mergeWith(ob2).subscribe(event -> {
-            state.resultArray.add(event.getData());
-        });
+        ob1.subscribeOn(Schedulers.newThread()).mergeWith(ob2.subscribeOn(Schedulers.newThread()))
+                .subscribe(event -> {
+                    state.resultArray.add(event.getData());
+                });
+
+        //Waiting for both T1, and T2 finished
+        while(ObservableFactory.isBothComplete != 2){
+        }
         blackhole.consume(state.resultArray);
     }
 
     @Benchmark
     public void testDisruptorMethod(Blackhole blackhole, BenchmarkState state) throws InterruptedException {
-        state.t1.setLoop(state.numberMsgTotal);
-        state.t2.setLoop(state.numberMsgTotal);
 
+        ThreadProducer t1 = new ThreadProducer("T1", state.disruptor.getRingBuffer(), state.numberMsgTotal);
+        ThreadProducer t2 = new ThreadProducer("T2", state. disruptor.getRingBuffer(), state.numberMsgTotal);
         // Starting P1, P2 producers
-        state.t1.start();
-        state.t2.start();
+        t1.start();
+        t2.start();
 
-        state.t1.join();
-        state.t2.join();
+        //Waiting for t1, and t2 finished
+        t1.join();
+        t2.join();
 
         //Throw the result into black hole
         blackhole.consume(state.resultArray);
     }
 
 
-    @State(Scope.Thread)
+    @State(Scope.Benchmark)
     public static class BenchmarkState {
         @Param({"10000", "100000", "1000000"})
         public int numberMsgTotal;
+
         public Disruptor<IEvent> disruptor;
-        public ProducerThread t1, t2;
         public List<String> resultArray;
 
-        @Setup(Level.Iteration)
+        @Setup(Level.Invocation)
         public void setup() {
             resultArray = new ArrayList<>();
             disruptor = DisruptorFactory.factory();
@@ -73,14 +78,13 @@ public class StreamDisruptorBenchmark {
 
             // Set up event
             disruptor.start();
-            t1 = new ProducerThread("T1", disruptor.getRingBuffer(), numberMsgTotal);
-            t2 = new ProducerThread("T2", disruptor.getRingBuffer(), numberMsgTotal);
         }
 
         @TearDown(Level.Invocation)
         public void tearDown() {
             disruptor.shutdown();
             resultArray.clear();
+
         }
     }
 }
